@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google × 松尾・岩澤研究室 | 自治体AI支援</title>
+  <meta name="description" content="Google × 東京大学 松尾・岩澤研究室。日本の自治体・地方の課題を、最先端のAI技術で解決します。">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#313131',
+            body: '#444444',
+            'line': '#ddd',
+            bg: '#f5f5f5',
+            btn: '#32373c',
+          },
+          fontFamily: {
+            sans: ['Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { color: #313131; font-feature-settings: "palt"; }
+
+    /* Focus visible */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #313131;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 9999;
+      background: #313131; color: #fff; padding: 8px 16px; font-size: 14px;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* Hero slider */
+    .hero-slider { position: relative; overflow: hidden; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      opacity: 0; transition: opacity 1.2s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-transparent transition-all duration-300" aria-label="メインナビゲーション">
+    <div class="max-w-[1100px] mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <!-- Logo placeholder -->
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-dark rounded flex items-center justify-center">
+            <span class="text-white text-xs font-bold">M</span>
+          </div>
+          <div class="leading-tight">
+            <span class="text-dark text-sm font-bold block">Google × 松尾・岩澤研究室</span>
+            <span class="text-body text-[10px] block">自治体AI支援プログラム</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#about" class="text-body hover:text-dark text-[13px] transition-colors">About</a>
+        <a href="#service" class="text-body hover:text-dark text-[13px] transition-colors">Service</a>
+        <a href="#works" class="text-body hover:text-dark text-[13px] transition-colors">Works</a>
+        <a href="#process" class="text-body hover:text-dark text-[13px] transition-colors">Process</a>
+        <a href="#training" class="text-body hover:text-dark text-[13px] transition-colors">Training</a>
+        <a href="#news" class="text-body hover:text-dark text-[13px] transition-colors">News</a>
+        <a href="#contact" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">Contact</a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="lg:hidden p-2 cursor-pointer" aria-label="メニューを開く" aria-expanded="false">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-gray-100">
+      <div class="max-w-[1100px] mx-auto px-6 py-6 flex flex-col gap-1">
+        <a href="#about" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">About</a>
+        <a href="#service" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">Service</a>
+        <a href="#works" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">Works</a>
+        <a href="#process" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">Process</a>
+        <a href="#training" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">Training</a>
+        <a href="#news" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">News</a>
+        <a href="#contact" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-4 mobile-link cursor-pointer">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===== S1. HERO ===== -->
+    <section class="hero-slider h-screen min-h-[600px] relative" aria-label="ヒーロー">
+      <!-- Slide backgrounds (placeholder colors simulating photos) -->
+      <div class="hero-slide active">
+        <div class="w-full h-full bg-gradient-to-br from-slate-700 to-slate-900"></div>
+      </div>
+      <div class="hero-slide">
+        <div class="w-full h-full bg-gradient-to-br from-slate-800 to-slate-600"></div>
+      </div>
+      <div class="hero-slide">
+        <div class="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800"></div>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <!-- Hero content -->
+      <div class="absolute inset-0 z-10 flex items-center justify-center">
+        <div class="text-center px-6 max-w-3xl">
+          <!-- Small logo mark -->
+          <div class="flex justify-center mb-10">
+            <div class="flex items-center gap-3 opacity-80">
+              <div class="w-10 h-10 border border-white/40 rounded flex items-center justify-center">
+                <span class="text-white text-sm font-bold">M</span>
+              </div>
+              <span class="text-white/70 text-xs tracking-widest">GOOGLE × MATSUO LAB</span>
+            </div>
+          </div>
+          <h1 class="text-white text-2xl sm:text-3xl md:text-[42px] font-bold leading-snug mb-8">
+            先端技術を、地域の力に。<br>
+            自治体のAI活用を支援する。
+          </h1>
+          <p class="text-white/70 text-sm sm:text-base leading-relaxed mb-4">
+            We support local governments in Japan through cutting-edge AI technology.
+          </p>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 text-white/30 text-[10px] tracking-widest uppercase">scroll</div>
+
+      <!-- Slide indicators -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-1">
+        <button class="slide-dot w-8 h-8 rounded-full flex items-center justify-center transition-all" data-slide="0" aria-label="スライド1"><span class="w-2 h-2 rounded-full bg-white/80 block"></span></button>
+        <button class="slide-dot w-8 h-8 rounded-full flex items-center justify-center transition-all" data-slide="1" aria-label="スライド2"><span class="w-2 h-2 rounded-full bg-white/30 block"></span></button>
+        <button class="slide-dot w-8 h-8 rounded-full flex items-center justify-center transition-all" data-slide="2" aria-label="スライド3"><span class="w-2 h-2 rounded-full bg-white/30 block"></span></button>
+      </div>
+    </section>
+
+    <!-- ===== S2. ABOUT ===== -->
+    <section id="about" class="py-24 sm:py-32" aria-label="取組概要">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <!-- Left: heading -->
+          <div class="reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6">About</p>
+            <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-8">
+              日本の自治体・地方の<br>課題解決のために。
+            </h2>
+            <div class="w-12 h-[2px] bg-dark"></div>
+          </div>
+
+          <!-- Right: body text -->
+          <div class="reveal">
+            <p class="text-body text-[15px] leading-[2] mb-8">
+              東京大学 松尾・岩澤研究室は、深層学習・大規模言語モデルを中心としたAI研究において世界トップクラスの実績を持つ研究室です。Googleとの連携により、研究室が持つ最先端の知見を、日本の自治体が直面する現実の課題解決に役立てる取り組みを推進しています。
+            </p>
+            <p class="text-body text-[15px] leading-[2] mb-10">
+              私たちの目的は、利益の追求ではありません。地域が抱える課題に対して、テクノロジーの力で真摯に向き合い、住民の暮らしをより良くすること。産学連携だからこそ実現できる、公益性の高いAI活用を目指しています。
+            </p>
+
+            <!-- Partner logos -->
+            <div class="flex flex-wrap items-center gap-8">
+              <div class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                <span class="text-dark text-sm font-medium">Google</span>
+              </div>
+              <div class="text-body/30">×</div>
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-dark rounded flex items-center justify-center">
+                  <span class="text-white text-[10px] font-bold">M</span>
+                </div>
+                <span class="text-dark text-sm font-medium">松尾・岩澤研究室</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== S3. SERVICE ===== -->
+    <section id="service" class="py-24 sm:py-32 bg-bg" aria-label="サービス">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6 reveal">Service</p>
+        <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-6 reveal">提供する価値</h2>
+        <p class="text-body text-[15px] leading-[2] max-w-2xl mb-16 reveal">
+          自治体のDX推進において、単なるツール導入ではなく、地域の課題構造を理解した上で、本質的な変革につながるAI活用を支援します。
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Service 1 -->
+          <div class="bg-white p-10 sm:p-12 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-6">01</p>
+            <h3 class="text-xl font-bold mb-4">AI Solution Development</h3>
+            <p class="text-[13px] text-body/60 mb-6">AIソリューション開発</p>
+            <p class="text-body text-[15px] leading-[2] mb-8">
+              自治体が抱える防災・窓口業務・地域活性化などの課題に対し、大規模言語モデル（LLM）や深層学習技術を活用したソリューションを開発。概念実証（PoC）から実用化・運用まで、一貫して支援します。
+            </p>
+            <a href="#works" class="inline-flex items-center gap-2 text-dark text-[13px] font-medium hover:opacity-60 transition-opacity cursor-pointer">
+              view more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bg-white p-10 sm:p-12 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-6">02</p>
+            <h3 class="text-xl font-bold mb-4">AI Education</h3>
+            <p class="text-[13px] text-body/60 mb-6">AI人材育成</p>
+            <p class="text-body text-[15px] leading-[2] mb-8">
+              技術とビジネスの橋渡しができる人材を育成。自治体職員向けのAI活用研修から、地域企業のDX人材育成、サイバーセキュリティ研修まで、実践的なプログラムを提供します。
+            </p>
+            <a href="#training" class="inline-flex items-center gap-2 text-dark text-[13px] font-medium hover:opacity-60 transition-opacity cursor-pointer">
+              view more
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== S4. WORKS ===== -->
+    <section id="works" class="py-24 sm:py-32" aria-label="導入事例">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6 reveal">Works</p>
+        <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-16 reveal">導入事例</h2>
+
+        <div class="space-y-0">
+
+          <!-- Case 1 -->
+          <article class="grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-12 py-12 border-t border-gray-200 reveal">
+            <div class="bg-bg aspect-[4/3] flex items-center justify-center">
+              <p class="text-body/30 text-sm">事例イメージ（仮）</p>
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-4">Case 01 — A県B市（仮）</p>
+              <h3 class="text-lg font-bold mb-4">AI防災予測・避難シミュレーション</h3>
+              <p class="text-body text-[15px] leading-[2] mb-6">
+                災害時の避難指示の遅延と情報伝達の不備が課題であったA県B市において、AIによる災害予測モデルと避難シミュレーションを構築。リアルタイムの気象データと地理情報を組み合わせ、避難指示の発令を迅速化。
+              </p>
+              <p class="text-dark text-sm font-medium">避難指示の発令時間 40%短縮（仮数値）</p>
+            </div>
+          </article>
+
+          <!-- Case 2 -->
+          <article class="grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-12 py-12 border-t border-gray-200 reveal">
+            <div class="bg-bg aspect-[4/3] flex items-center justify-center">
+              <p class="text-body/30 text-sm">事例イメージ（仮）</p>
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-4">Case 02 — C県D市（仮）</p>
+              <h3 class="text-lg font-bold mb-4">行政窓口AIアシスタントの導入</h3>
+              <p class="text-body text-[15px] leading-[2] mb-6">
+                窓口業務の混雑と住民の待ち時間が慢性的な課題であったC県D市において、AIチャットボットと自動振り分けシステムを導入。住民からのよくある問い合わせを自動対応し、職員は複雑な相談業務に集中できる環境を構築。
+              </p>
+              <p class="text-dark text-sm font-medium">窓口対応時間 60%削減（仮数値）</p>
+            </div>
+          </article>
+
+          <!-- Case 3 -->
+          <article class="grid md:grid-cols-[1fr_1.5fr] gap-8 md:gap-12 py-12 border-t border-gray-200 border-b reveal">
+            <div class="bg-bg aspect-[4/3] flex items-center justify-center">
+              <p class="text-body/30 text-sm">事例イメージ（仮）</p>
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-4">Case 03 — E県F町（仮）</p>
+              <h3 class="text-lg font-bold mb-4">AIパーソナライズド観光提案</h3>
+              <p class="text-body text-[15px] leading-[2] mb-6">
+                観光客数の減少と地域資源の活用不足に直面していたE県F町において、AIが訪問者の嗜好・行動データを分析し、一人ひとりに最適化された観光ルートを提案するシステムを開発。
+              </p>
+              <p class="text-dark text-sm font-medium">観光客数 25%増加（仮数値）</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="text-body/40 text-[12px] mt-8">※ 事例内容・数値は仮のものです。具体の事例文言は松尾研と連携して作成します。</p>
+      </div>
+    </section>
+
+    <!-- ===== S5. PROCESS ===== -->
+    <section id="process" class="py-24 sm:py-32 bg-bg" aria-label="導入の流れ">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6 reveal">Process</p>
+        <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-6 reveal">導入から検証までの流れ</h2>
+        <p class="text-body text-[15px] leading-[2] mb-16 reveal">
+          まずはヒアリングから。課題整理・ご提案まで無料でサポートします。
+        </p>
+
+        <div class="space-y-0">
+
+          <!-- Step 1 -->
+          <div class="grid grid-cols-[60px_1fr] md:grid-cols-[80px_120px_1fr] gap-4 md:gap-8 py-8 border-t border-gray-300 reveal">
+            <div>
+              <span class="text-dark text-2xl font-bold">01</span>
+            </div>
+            <div class="hidden md:block">
+              <span class="inline-block bg-dark text-white text-[11px] rounded-full px-4 py-1.5">無料</span>
+            </div>
+            <div>
+              <span class="md:hidden inline-block bg-dark text-white text-[11px] rounded-full px-4 py-1.5 mb-3">無料</span>
+              <h3 class="text-base font-bold mb-2">お問い合わせ・ヒアリング</h3>
+              <p class="text-body text-[14px] leading-[1.9]">自治体が抱える課題をヒアリングし、AIでの解決可能性を検討します。</p>
+              <p class="text-body/40 text-[13px] mt-2">期間：約1〜2週間</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="grid grid-cols-[60px_1fr] md:grid-cols-[80px_120px_1fr] gap-4 md:gap-8 py-8 border-t border-gray-300 reveal">
+            <div>
+              <span class="text-dark text-2xl font-bold">02</span>
+            </div>
+            <div class="hidden md:block">
+              <span class="inline-block bg-dark text-white text-[11px] rounded-full px-4 py-1.5">無料</span>
+            </div>
+            <div>
+              <span class="md:hidden inline-block bg-dark text-white text-[11px] rounded-full px-4 py-1.5 mb-3">無料</span>
+              <h3 class="text-base font-bold mb-2">課題整理・ご提案</h3>
+              <p class="text-body text-[14px] leading-[1.9]">課題を構造化し、AI活用の具体的な提案書を作成します。</p>
+              <p class="text-body/40 text-[13px] mt-2">期間：約2〜4週間</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="grid grid-cols-[60px_1fr] md:grid-cols-[80px_120px_1fr] gap-4 md:gap-8 py-8 border-t border-gray-300 reveal">
+            <div>
+              <span class="text-dark text-2xl font-bold">03</span>
+            </div>
+            <div class="hidden md:block">
+              <span class="inline-block border border-gray-400 text-body text-[11px] rounded-full px-4 py-1.5">条件による</span>
+            </div>
+            <div>
+              <span class="md:hidden inline-block border border-gray-400 text-body text-[11px] rounded-full px-4 py-1.5 mb-3">条件による</span>
+              <h3 class="text-base font-bold mb-2">PoC（実証実験）</h3>
+              <p class="text-body text-[14px] leading-[1.9]">小規模な環境でAIの実証実験を実施し、効果を測定します。</p>
+              <p class="text-body/40 text-[13px] mt-2">期間：約1〜3ヶ月</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="grid grid-cols-[60px_1fr] md:grid-cols-[80px_120px_1fr] gap-4 md:gap-8 py-8 border-t border-gray-300 border-b reveal">
+            <div>
+              <span class="text-dark text-2xl font-bold">04</span>
+            </div>
+            <div class="hidden md:block">
+              <span class="inline-block border border-gray-400 text-body text-[11px] rounded-full px-4 py-1.5">有料</span>
+            </div>
+            <div>
+              <span class="md:hidden inline-block border border-gray-400 text-body text-[11px] rounded-full px-4 py-1.5 mb-3">有料</span>
+              <h3 class="text-base font-bold mb-2">本格導入・運用</h3>
+              <p class="text-body text-[14px] leading-[1.9]">本番環境でのシステム構築、運用支援、継続的な効果検証を行います。</p>
+              <p class="text-body/40 text-[13px] mt-2">期間：約3〜6ヶ月〜</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== S6. TRAINING ===== -->
+    <section id="training" class="py-24 sm:py-32" aria-label="人材育成">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6 reveal">Training</p>
+        <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-6 reveal">AI人材育成・研修プログラム</h2>
+        <p class="text-body text-[15px] leading-[2] max-w-2xl mb-16 reveal">
+          AI活用だけでなく、地域の人材育成も支援します。技術と実務の橋渡しができる人材を育てるために、実践的なプログラムを提供しています。
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- Training 1 -->
+          <div class="bg-bg p-8 sm:p-10 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-6">Program 01</p>
+            <h3 class="text-base font-bold mb-4">AIコネクトアカデミー</h3>
+            <p class="text-body text-[14px] leading-[2]">
+              自治体職員向けAI活用研修。基礎的なAIリテラシーから、業務での実践的な活用方法まで、体系的に学べるプログラムです。
+            </p>
+          </div>
+
+          <!-- Training 2 -->
+          <div class="bg-bg p-8 sm:p-10 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-6">Program 02</p>
+            <h3 class="text-base font-bold mb-4">サイバーセキュリティ研修</h3>
+            <p class="text-body text-[14px] leading-[2]">
+              自治体のセキュリティ対策を強化する実践研修。インシデント対応力の向上から、日常業務におけるセキュリティ意識の醸成まで。
+            </p>
+          </div>
+
+          <!-- Training 3 -->
+          <div class="bg-bg p-8 sm:p-10 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-6">Program 03</p>
+            <h3 class="text-base font-bold mb-4">地域課題解決ワークショップ</h3>
+            <p class="text-body text-[14px] leading-[2]">
+              地域企業・住民と協働し、地域固有の課題をAIで解決する実践型プログラム。地域に根ざしたAI人材を育成します。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== S7. MOVIE ===== -->
+    <section id="movie" class="py-24 sm:py-32 bg-bg" aria-label="動画">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6 reveal">Movie</p>
+        <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-12 reveal">取り組みの様子</h2>
+
+        <div class="reveal">
+          <div class="bg-gray-200 aspect-video flex items-center justify-center">
+            <div class="text-center">
+              <svg class="w-12 h-12 text-body/20 mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/>
+              </svg>
+              <p class="text-body/40 text-[13px]">神奈川県 取り組み動画</p>
+              <p class="text-body/25 text-[11px] mt-1">動画URLが確定次第、埋め込みに差し替え</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== S8. NEWS ===== -->
+    <section id="news" class="py-24 sm:py-32" aria-label="お知らせ">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6 reveal">News</p>
+        <h2 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-16 reveal">お知らせ</h2>
+
+        <div class="space-y-0">
+          <a href="#" class="block py-6 border-t border-gray-200 hover:opacity-60 transition-opacity reveal">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8">
+              <time class="text-body/40 text-[13px] shrink-0" datetime="2025-01-01">2025.XX.XX</time>
+              <p class="text-dark text-[15px]">Google × 松尾・岩澤研究室、自治体AI支援プログラムを開始（仮）</p>
+            </div>
+          </a>
+          <a href="#" class="block py-6 border-t border-gray-200 hover:opacity-60 transition-opacity reveal">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8">
+              <time class="text-body/40 text-[13px] shrink-0" datetime="2025-01-01">2025.XX.XX</time>
+              <p class="text-dark text-[15px]">AIコネクトアカデミー 第1期受講者募集を開始（仮）</p>
+            </div>
+          </a>
+          <a href="#" class="block py-6 border-t border-gray-200 border-b hover:opacity-60 transition-opacity reveal">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8">
+              <time class="text-body/40 text-[13px] shrink-0" datetime="2025-01-01">2025.XX.XX</time>
+              <p class="text-dark text-[15px]">神奈川県との連携実証がスタート（仮）</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== S9. CTA ===== -->
+    <section id="contact" class="py-24 sm:py-32 bg-dark" aria-label="お問い合わせ">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Contact -->
+          <div class="py-12 sm:py-16 px-8 sm:px-12 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-white/40 mb-6">Contact</p>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6">お問い合わせ</h2>
+            <p class="text-white/60 text-[15px] leading-[2] mb-10">
+              自治体のAI活用に関するご相談やご質問がありましたら、お気軽にお問い合わせください。ヒアリングから課題整理まで無料でサポートします。
+            </p>
+            <a href="mailto:contact@example.com" class="inline-block bg-white text-dark text-[14px] font-medium rounded-full px-8 py-3 hover:opacity-80 transition-opacity cursor-pointer">
+              Contact Us
+            </a>
+          </div>
+
+          <!-- Download -->
+          <div class="py-12 sm:py-16 px-8 sm:px-12 border-t md:border-t-0 md:border-l border-white/10 reveal">
+            <p class="text-[11px] tracking-[0.2em] uppercase text-white/40 mb-6">Download</p>
+            <h2 class="text-xl sm:text-2xl font-bold text-white mb-6">資料ダウンロード</h2>
+            <p class="text-white/60 text-[15px] leading-[2] mb-10">
+              取り組みの詳細やサービス内容をまとめた資料をご用意しています。
+            </p>
+            <a href="#" class="inline-block border border-white/30 text-white text-[14px] font-medium rounded-full px-8 py-3 hover:bg-white/10 transition-colors cursor-pointer">
+              Download
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-dark py-16" role="contentinfo">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <!-- Logo -->
+      <div class="mb-12">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-7 h-7 bg-white/10 rounded flex items-center justify-center">
+            <span class="text-white text-[10px] font-bold">M</span>
+          </div>
+          <span class="text-white text-sm font-medium">Google × 松尾・岩澤研究室</span>
+        </div>
+        <p class="text-white/30 text-[11px]">自治体AI支援プログラム</p>
+      </div>
+
+      <!-- Footer nav -->
+      <nav class="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12" aria-label="フッターナビゲーション">
+        <div>
+          <p class="text-white/30 text-[11px] uppercase tracking-wider mb-4">About</p>
+          <ul class="space-y-2">
+            <li><a href="#about" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">取組概要</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white/30 text-[11px] uppercase tracking-wider mb-4">Service</p>
+          <ul class="space-y-2">
+            <li><a href="#service" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">AI Solution</a></li>
+            <li><a href="#training" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">AI Education</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white/30 text-[11px] uppercase tracking-wider mb-4">Works</p>
+          <ul class="space-y-2">
+            <li><a href="#works" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">導入事例</a></li>
+            <li><a href="#movie" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">動画</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white/30 text-[11px] uppercase tracking-wider mb-4">Other</p>
+          <ul class="space-y-2">
+            <li><a href="#process" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">導入の流れ</a></li>
+            <li><a href="#news" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">お知らせ</a></li>
+            <li><a href="#contact" class="text-white/50 text-[13px] hover:text-white/80 transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-white/20 text-[11px]">Copyright &copy; Google × Matsuo-Iwasawa Lab. All Rights Reserved.</p>
+        <a href="#" class="text-white/20 text-[11px] hover:text-white/40 transition-colors">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // Navbar border on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add('border-gray-200');
+        navbar.classList.remove('border-transparent');
+      } else {
+        navbar.classList.remove('border-gray-200');
+        navbar.classList.add('border-transparent');
+      }
+    }, { passive: true });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', !isOpen);
+      menuIcon.setAttribute('d', isOpen
+        ? 'M4 6h16M4 12h16M4 18h16'
+        : 'M6 18L18 6M6 6l12 12'
+      );
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Hero slider
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slide-dot');
+    let current = 0;
+    function showSlide(n) {
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => {
+        const span = d.querySelector('span');
+        if (span) { span.classList.remove('bg-white/80'); span.classList.add('bg-white/30'); }
+      });
+      slides[n].classList.add('active');
+      const activeSpan = dots[n].querySelector('span');
+      if (activeSpan) { activeSpan.classList.add('bg-white/80'); activeSpan.classList.remove('bg-white/30'); }
+      current = n;
+    }
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => showSlide(parseInt(dot.dataset.slide)));
+    });
+    setInterval(() => showSlide((current + 1) % slides.length), 5000);
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
