@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIパーソナライズド観光提案 | Google × 松尾・岩澤研究室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { dark: '#313131', body: '#444444', bg: '#f5f5f5', btn: '#32373c' },
+          fontFamily: { sans: ['Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-sans text-dark bg-white pt-20">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200" aria-label="メインナビゲーション">
+    <div class="px-4 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center shrink-0">
+        <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-11 sm:h-12 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-7 mr-4 sm:mr-8">
+        <a href="../index.html#about" class="text-body hover:text-dark text-[13px] transition-colors">私たちについて</a>
+        <a href="index.html" class="text-body hover:text-dark text-[13px] transition-colors">導入事例</a>
+        <a href="../index.html#process" class="text-body hover:text-dark text-[13px] transition-colors">導入の流れ</a>
+        <a href="../index.html#news" class="text-body hover:text-dark text-[13px] transition-colors">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">お問い合わせ</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 cursor-pointer" aria-label="メニューを開く" aria-expanded="false">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-gray-100">
+      <div class="max-w-[1100px] mx-auto px-4 py-6 flex flex-col gap-1">
+        <a href="../index.html#about" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">私たちについて</a>
+        <a href="index.html" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入事例</a>
+        <a href="../index.html#process" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入の流れ</a>
+        <a href="../index.html#news" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-4 mobile-link cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-2 mobile-link cursor-pointer">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="max-w-[1100px] mx-auto px-4 pt-8 pb-4">
+      <nav class="text-[13px] text-body/50" aria-label="パンくずリスト">
+        <a href="../index.html" class="hover:text-dark transition-colors">トップ</a>
+        <span class="mx-2">/</span>
+        <a href="index.html" class="hover:text-dark transition-colors">導入事例</a>
+        <span class="mx-2">/</span>
+        <span class="text-dark">Case 03</span>
+      </nav>
+    </div>
+
+    <!-- Hero image -->
+    <div class="max-w-[1100px] mx-auto px-4 mb-10">
+      <img src="../assets/images/works-03.jpg" alt="AIパーソナライズド観光提案" class="w-full aspect-[2/1] object-cover rounded">
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[780px] mx-auto px-4 pb-16">
+      <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-4">Case 03 — E県F町（仮）</p>
+      <h1 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-8">AIパーソナライズド観光提案</h1>
+
+      <!-- Overview -->
+      <div class="bg-bg rounded p-6 sm:p-8 mb-10">
+        <table class="w-full text-[14px]">
+          <tbody>
+            <tr class="border-b border-dark/10">
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top w-32">自治体</th>
+              <td class="py-3 text-body">E県F町（仮）</td>
+            </tr>
+            <tr class="border-b border-dark/10">
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top">分野</th>
+              <td class="py-3 text-body">観光振興・地域経済活性化</td>
+            </tr>
+            <tr class="border-b border-dark/10">
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top">期間</th>
+              <td class="py-3 text-body">約7ヶ月（PoC 3ヶ月 + 実装 4ヶ月）</td>
+            </tr>
+            <tr>
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top">活用技術</th>
+              <td class="py-3 text-body">生成AI、レコメンドエンジン、位置情報データ分析</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-body text-[15px] leading-[2] space-y-6">
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">背景・課題</h2>
+        <p>
+          E県F町は、豊かな自然環境と歴史的な町並みを有する観光地ですが、近年は訪問者数の減少が続いていました。従来の観光案内は紙のパンフレットと観光案内所が中心で、訪問者の多様なニーズや嗜好に対応できていませんでした。
+        </p>
+        <p>
+          特に課題となっていたのが、観光スポットの偏在です。有名な観光地には訪問者が集中する一方、地元住民にとっては当たり前でも訪問者にとっては魅力的な場所――地元の老舗飲食店、知る人ぞ知る景観スポット、季節限定の体験プログラム――への送客が進んでいませんでした。結果として平均滞在時間は短く、地域経済への波及効果も限定的でした。
+        </p>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">ソリューション</h2>
+        <p>
+          Google × 松尾・岩澤研究室のチームは、以下のシステムを構築しました。
+        </p>
+        <ol class="list-decimal pl-6 space-y-4">
+          <li>
+            <span class="font-medium text-dark">AIパーソナライズドルート提案アプリ</span><br>
+            訪問者がアプリ上で旅行の目的（自然体験、グルメ、歴史散策など）や同行者（家族、カップル、一人旅など）を選択すると、AIが最適な観光ルートを提案。リアルタイムの混雑状況や天候も考慮し、快適な観光体験をサポートします。
+          </li>
+          <li>
+            <span class="font-medium text-dark">地域事業者連携プラットフォーム</span><br>
+            地元の飲食店・宿泊施設・体験プログラム事業者が、空き状況や季節限定メニューなどの情報をリアルタイムに登録できるプラットフォームを構築。AIが訪問者の嗜好に合わせてこれらの情報をレコメンドします。
+          </li>
+          <li>
+            <span class="font-medium text-dark">観光データ分析ダッシュボード</span><br>
+            訪問者の行動データ（匿名化済み）を集約・分析し、人気スポットの時間帯別混雑度や訪問者の属性・行動パターンを可視化。観光施策の立案に活用できるダッシュボードを自治体向けに提供しました。
+          </li>
+        </ol>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">導入プロセス</h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="border border-gray-200 rounded p-5">
+            <p class="text-[12px] text-body/40 mb-2">Phase 1（1〜3ヶ月目）</p>
+            <p class="text-[14px] font-medium text-dark mb-2">データ収集・PoC</p>
+            <p class="text-[13px] text-body">観光スポットや事業者の情報をデータベース化。訪問者モニターによるプロトタイプの検証を実施。</p>
+          </div>
+          <div class="border border-gray-200 rounded p-5">
+            <p class="text-[12px] text-body/40 mb-2">Phase 2（4〜6ヶ月目）</p>
+            <p class="text-[14px] font-medium text-dark mb-2">アプリ開発・連携構築</p>
+            <p class="text-[13px] text-body">スマートフォンアプリの開発と事業者連携プラットフォームを構築。地元事業者への説明会と登録支援を実施。</p>
+          </div>
+          <div class="border border-gray-200 rounded p-5">
+            <p class="text-[12px] text-body/40 mb-2">Phase 3（7ヶ月目）</p>
+            <p class="text-[14px] font-medium text-dark mb-2">リリース・運用</p>
+            <p class="text-[13px] text-body">一般公開を開始。利用状況のモニタリングとレコメンド精度の継続的な改善体制を構築。</p>
+          </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">成果</h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="bg-bg rounded p-5 text-center">
+            <p class="text-2xl sm:text-3xl font-bold text-dark mb-1">25<span class="text-lg">%</span></p>
+            <p class="text-[13px] text-body">観光客数増加</p>
+          </div>
+          <div class="bg-bg rounded p-5 text-center">
+            <p class="text-2xl sm:text-3xl font-bold text-dark mb-1">1.8<span class="text-lg">倍</span></p>
+            <p class="text-[13px] text-body">平均滞在時間の延長</p>
+          </div>
+          <div class="bg-bg rounded p-5 text-center">
+            <p class="text-2xl sm:text-3xl font-bold text-dark mb-1">120<span class="text-lg">店</span></p>
+            <p class="text-[13px] text-body">連携地元事業者数</p>
+          </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">担当者の声</h2>
+        <blockquote class="border-l-2 border-dark/20 pl-6 py-2">
+          <p class="mb-4">
+            「観光客が有名スポットだけ見て日帰りしてしまうのが長年の悩みでした。AIによるパーソナライズド提案のおかげで、これまで知られていなかった地元の魅力的なお店や体験に訪問者を送客できるようになり、町全体が活気づいています。地元事業者からも『新しいお客さんが増えた』と喜びの声が上がっています。」
+          </p>
+          <footer class="text-[13px] text-body/60">— E県F町 観光振興課 課長（仮）</footer>
+        </blockquote>
+
+        <p class="text-body/40 text-[12px] mt-10">※ 事例内容・数値・担当者コメントは仮のものです。具体の文言は松尾研と連携して作成します。</p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <a href="index.html" class="inline-block border border-dark text-dark text-[14px] font-medium rounded-full px-8 py-3 hover:bg-dark hover:text-white transition-colors cursor-pointer">
+          導入事例一覧へ戻る
+        </a>
+        <a href="2.html" class="text-body text-[14px] hover:text-dark transition-colors">&larr; 前の事例: 行政窓口AIアシスタント</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-bg" role="contentinfo">
+    <div class="max-w-[1100px] mx-auto px-4">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 py-14">
+        <div>
+          <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-12 w-auto mb-5">
+          <p class="text-body/40 text-[13px] leading-relaxed">
+            日本の自治体・地方の課題解決を支援します。
+          </p>
+        </div>
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8" aria-label="フッターナビゲーション">
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">About</p>
+            <ul class="space-y-3">
+              <li><a href="../index.html#about" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">私たちについて</a></li>
+              <li><a href="../index.html#movie" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">取り組みの様子</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Works</p>
+            <ul class="space-y-3">
+              <li><a href="../works/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入事例</a></li>
+              <li><a href="../index.html#process" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入の流れ</a></li>
+              <li><a href="../news/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お知らせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Contact</p>
+            <ul class="space-y-3">
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お問い合わせ</a></li>
+              <li><a href="../download.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">資料ダウンロード</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="border-t border-dark/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-dark/20 text-[11px]">Copyright &copy; Google × Matsuo-Iwasawa Lab. All Rights Reserved.</p>
+        <a href="#" class="text-dark/20 text-[11px] hover:text-dark/40 transition-colors">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn?.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
+      menuBtn.setAttribute('aria-expanded', !open);
+    });
+  </script>
+</body>
+</html>

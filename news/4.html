@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI活用事例レポートを公開しました | Google × 松尾・岩澤研究室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { dark: '#313131', body: '#444444', bg: '#f5f5f5', btn: '#32373c' },
+          fontFamily: { sans: ['Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-sans text-dark bg-white pt-20">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300" aria-label="メインナビゲーション">
+    <div class="px-4 sm:px-6 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center shrink-0">
+        <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-11 sm:h-12 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-7 mr-4 sm:mr-8">
+        <a href="../index.html#about" class="text-body hover:text-dark text-[13px] transition-colors">私たちについて</a>
+        <a href="../index.html#works" class="text-body hover:text-dark text-[13px] transition-colors">導入事例</a>
+        <a href="../index.html#process" class="text-body hover:text-dark text-[13px] transition-colors">導入の流れ</a>
+        <a href="../index.html#news" class="text-body hover:text-dark text-[13px] transition-colors">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">お問い合わせ</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 cursor-pointer" aria-label="メニューを開く" aria-expanded="false">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-gray-100">
+      <div class="max-w-[1100px] mx-auto px-6 py-6 flex flex-col gap-1">
+        <a href="../index.html#about" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">私たちについて</a>
+        <a href="../index.html#works" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入事例</a>
+        <a href="../index.html#process" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入の流れ</a>
+        <a href="../index.html#news" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-4 mobile-link cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-2 mobile-link cursor-pointer">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-[860px] mx-auto px-4 py-16 sm:py-20">
+    <nav class="text-[13px] text-body/50 mb-8" aria-label="パンくずリスト">
+      <a href="../index.html" class="hover:text-dark transition-colors">トップ</a>
+      <span class="mx-2">/</span>
+      <a href="index.html" class="hover:text-dark transition-colors">お知らせ</a>
+      <span class="mx-2">/</span>
+      <span class="text-dark">AI活用事例レポートを公開しました</span>
+    </nav>
+
+    <time class="text-body/40 text-[13px] block mb-4" datetime="2025-01-01">20XX.XX.XX</time>
+    <h1 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-12">AI活用事例レポートを公開しました（仮）</h1>
+
+    <div class="text-body text-[15px] leading-[2] space-y-6">
+      <p>
+        Google × 松尾・岩澤研究室は、これまでの自治体AI支援プログラムの取り組みをまとめた「AI活用事例レポート」を公開いたしました。
+      </p>
+
+      <h2 class="text-lg font-bold text-dark !mt-10">レポートの内容</h2>
+      <p>
+        本レポートでは、プログラム開始以降に各自治体と連携して取り組んだAI活用事例について、課題の背景、ソリューションの詳細、導入プロセス、そして定量的な成果を体系的にまとめています。
+      </p>
+
+      <h3 class="text-[15px] font-bold text-dark !mt-8">収録事例</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><span class="font-medium text-dark">防災分野</span> — AI災害予測モデルと避難シミュレーションの構築事例</li>
+        <li><span class="font-medium text-dark">住民サービス分野</span> — 行政窓口AIアシスタントの導入事例</li>
+        <li><span class="font-medium text-dark">観光分野</span> — AIパーソナライズド観光提案システムの開発事例</li>
+        <li><span class="font-medium text-dark">雇用分野</span> — 雇用マッチングAIの実証事例</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-dark !mt-10">レポートから見えた知見</h2>
+      <p>
+        各事例を横断的に分析した結果、自治体におけるAI導入を成功させるためには以下の3つの要素が重要であることがわかりました。
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><span class="font-medium text-dark">現場起点の課題設定</span> — 技術ありきではなく、現場が本当に困っている課題から出発すること</li>
+        <li><span class="font-medium text-dark">段階的な導入</span> — 小規模なPoCから始め、効果を確認しながら段階的に拡大すること</li>
+        <li><span class="font-medium text-dark">人材育成との両輪</span> — システム導入と並行して、職員のAIリテラシーを高めること</li>
+      </ol>
+
+      <h2 class="text-lg font-bold text-dark !mt-10">ダウンロード</h2>
+      <p>
+        レポートの全文は<a href="../download.html" class="underline hover:text-dark transition-colors">資料ダウンロードページ</a>からご入手いただけます。自治体のAI活用をご検討中の方は、ぜひご一読ください。
+      </p>
+
+      <p class="text-body/40 text-[12px] !mt-10">※ 本記事の内容は仮のものです。</p>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-bg" role="contentinfo">
+    <div class="max-w-[1100px] mx-auto px-4">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 py-14">
+        <div>
+          <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-12 w-auto mb-5">
+          <p class="text-body/40 text-[13px] leading-relaxed">
+            日本の自治体・地方の課題解決を支援します。
+          </p>
+        </div>
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8" aria-label="フッターナビゲーション">
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">About</p>
+            <ul class="space-y-3">
+              <li><a href="../index.html#about" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">私たちについて</a></li>
+              <li><a href="../index.html#movie" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">取り組みの様子</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Works</p>
+            <ul class="space-y-3">
+              <li><a href="../works/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入事例</a></li>
+              <li><a href="../index.html#process" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入の流れ</a></li>
+              <li><a href="../news/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お知らせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Contact</p>
+            <ul class="space-y-3">
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お問い合わせ</a></li>
+              <li><a href="../download.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">資料ダウンロード</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="border-t border-dark/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-dark/20 text-[11px]">Copyright &copy; Google × Matsuo-Iwasawa Lab. All Rights Reserved.</p>
+        <a href="#" class="text-dark/20 text-[11px] hover:text-dark/40 transition-colors">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
+      menuBtn.setAttribute('aria-expanded', !open);
+    });
+  </script>
+</body>
+</html>

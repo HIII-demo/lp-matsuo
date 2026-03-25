@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>行政窓口AIアシスタントの導入 | Google × 松尾・岩澤研究室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { dark: '#313131', body: '#444444', bg: '#f5f5f5', btn: '#32373c' },
+          fontFamily: { sans: ['Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-sans text-dark bg-white pt-20">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200" aria-label="メインナビゲーション">
+    <div class="px-4 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center shrink-0">
+        <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-11 sm:h-12 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-7 mr-4 sm:mr-8">
+        <a href="../index.html#about" class="text-body hover:text-dark text-[13px] transition-colors">私たちについて</a>
+        <a href="index.html" class="text-body hover:text-dark text-[13px] transition-colors">導入事例</a>
+        <a href="../index.html#process" class="text-body hover:text-dark text-[13px] transition-colors">導入の流れ</a>
+        <a href="../index.html#news" class="text-body hover:text-dark text-[13px] transition-colors">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">お問い合わせ</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 cursor-pointer" aria-label="メニューを開く" aria-expanded="false">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-gray-100">
+      <div class="max-w-[1100px] mx-auto px-4 py-6 flex flex-col gap-1">
+        <a href="../index.html#about" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">私たちについて</a>
+        <a href="index.html" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入事例</a>
+        <a href="../index.html#process" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入の流れ</a>
+        <a href="../index.html#news" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-4 mobile-link cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-2 mobile-link cursor-pointer">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="max-w-[1100px] mx-auto px-4 pt-8 pb-4">
+      <nav class="text-[13px] text-body/50" aria-label="パンくずリスト">
+        <a href="../index.html" class="hover:text-dark transition-colors">トップ</a>
+        <span class="mx-2">/</span>
+        <a href="index.html" class="hover:text-dark transition-colors">導入事例</a>
+        <span class="mx-2">/</span>
+        <span class="text-dark">Case 02</span>
+      </nav>
+    </div>
+
+    <!-- Hero image -->
+    <div class="max-w-[1100px] mx-auto px-4 mb-10">
+      <img src="../assets/images/works-02.jpg" alt="行政窓口AIアシスタント" class="w-full aspect-[2/1] object-cover rounded">
+    </div>
+
+    <!-- Content -->
+    <div class="max-w-[780px] mx-auto px-4 pb-16">
+      <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-4">Case 02 — C県D市（仮）</p>
+      <h1 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-8">行政窓口AIアシスタントの導入</h1>
+
+      <!-- Overview -->
+      <div class="bg-bg rounded p-6 sm:p-8 mb-10">
+        <table class="w-full text-[14px]">
+          <tbody>
+            <tr class="border-b border-dark/10">
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top w-32">自治体</th>
+              <td class="py-3 text-body">C県D市（仮）</td>
+            </tr>
+            <tr class="border-b border-dark/10">
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top">分野</th>
+              <td class="py-3 text-body">住民サービス・窓口業務</td>
+            </tr>
+            <tr class="border-b border-dark/10">
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top">期間</th>
+              <td class="py-3 text-body">約5ヶ月（PoC 2ヶ月 + 実装 3ヶ月）</td>
+            </tr>
+            <tr>
+              <th class="text-left py-3 pr-6 font-medium whitespace-nowrap align-top">活用技術</th>
+              <td class="py-3 text-body">生成AI（LLM）、自然言語処理、RAG（検索拡張生成）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="text-body text-[15px] leading-[2] space-y-6">
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">背景・課題</h2>
+        <p>
+          C県D市では、人口約15万人に対して窓口業務を担当する職員数が限られており、特に3〜4月の転入・転出シーズンには窓口が長時間混雑し、住民の平均待ち時間が1時間を超えることも珍しくありませんでした。
+        </p>
+        <p>
+          問い合わせ内容を分析すると、住民からの質問の約70%が「手続きに必要な書類は何か」「どの窓口に行けばよいか」といった定型的なものであることが判明。しかし、これらの対応に職員の多くの時間が費やされ、複雑な相談業務（生活保護、介護、子育て支援など）に十分な時間を割けない状況が続いていました。
+        </p>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">ソリューション</h2>
+        <p>
+          Google × 松尾・岩澤研究室のチームは、以下のシステムを構築しました。
+        </p>
+        <ol class="list-decimal pl-6 space-y-4">
+          <li>
+            <span class="font-medium text-dark">AIチャットボット（Web・LINE対応）</span><br>
+            市の条例・規則・手続きガイドなど約3,000件のドキュメントを学習したRAGベースの生成AIチャットボットを構築。住民は24時間いつでも、必要な書類や手続き方法を自然な対話形式で確認できるようになりました。
+          </li>
+          <li>
+            <span class="font-medium text-dark">窓口振り分け最適化システム</span><br>
+            来庁者の用件をタブレット端末で事前にヒアリングし、AIが最適な窓口と担当者を自動でマッチング。手続きに必要な書類の事前案内も行い、窓口での手戻りを削減します。
+          </li>
+          <li>
+            <span class="font-medium text-dark">職員向けナレッジアシスタント</span><br>
+            複雑な制度や手続きについて、職員が即座に正確な情報を検索・参照できるAIアシスタントを導入。新人職員の教育コストの削減にも貢献しています。
+          </li>
+        </ol>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">導入プロセス</h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="border border-gray-200 rounded p-5">
+            <p class="text-[12px] text-body/40 mb-2">Phase 1（1〜2ヶ月目）</p>
+            <p class="text-[14px] font-medium text-dark mb-2">データ整備・PoC</p>
+            <p class="text-[13px] text-body">既存の手続きガイド・FAQを構造化データとして整備。チャットボットのプロトタイプを構築し、職員による精度検証を実施。</p>
+          </div>
+          <div class="border border-gray-200 rounded p-5">
+            <p class="text-[12px] text-body/40 mb-2">Phase 2（3〜4ヶ月目）</p>
+            <p class="text-[14px] font-medium text-dark mb-2">システム構築・連携</p>
+            <p class="text-[13px] text-body">LINE連携やタブレット端末での振り分けシステムを実装。既存の予約管理システムとの連携も構築。</p>
+          </div>
+          <div class="border border-gray-200 rounded p-5">
+            <p class="text-[12px] text-body/40 mb-2">Phase 3（5ヶ月目）</p>
+            <p class="text-[14px] font-medium text-dark mb-2">運用開始・改善</p>
+            <p class="text-[13px] text-body">段階的に運用を開始。住民・職員からのフィードバックをもとに回答精度を継続的に改善。</p>
+          </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">成果</h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="bg-bg rounded p-5 text-center">
+            <p class="text-2xl sm:text-3xl font-bold text-dark mb-1">60<span class="text-lg">%</span></p>
+            <p class="text-[13px] text-body">窓口対応時間削減</p>
+          </div>
+          <div class="bg-bg rounded p-5 text-center">
+            <p class="text-2xl sm:text-3xl font-bold text-dark mb-1">15<span class="text-lg">分</span></p>
+            <p class="text-[13px] text-body">平均待ち時間（従来60分）</p>
+          </div>
+          <div class="bg-bg rounded p-5 text-center">
+            <p class="text-2xl sm:text-3xl font-bold text-dark mb-1">24<span class="text-lg">h</span></p>
+            <p class="text-[13px] text-body">オンライン窓口対応</p>
+          </div>
+        </div>
+
+        <h2 class="text-lg font-bold text-dark mt-10 mb-4">担当者の声</h2>
+        <blockquote class="border-l-2 border-dark/20 pl-6 py-2">
+          <p class="mb-4">
+            「以前は定型的な質問への対応で一日が終わってしまうことも多く、本当に支援が必要な住民の方に十分な時間を割けない歯がゆさがありました。AIアシスタントの導入後は、生活相談やケース対応にじっくり向き合えるようになり、住民サービスの質が明らかに向上したと感じています。」
+          </p>
+          <footer class="text-[13px] text-body/60">— C県D市 市民課 窓口担当主任（仮）</footer>
+        </blockquote>
+
+        <p class="text-body/40 text-[12px] mt-10">※ 事例内容・数値・担当者コメントは仮のものです。具体の文言は松尾研と連携して作成します。</p>
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <a href="index.html" class="inline-block border border-dark text-dark text-[14px] font-medium rounded-full px-8 py-3 hover:bg-dark hover:text-white transition-colors cursor-pointer">
+          導入事例一覧へ戻る
+        </a>
+        <div class="flex gap-6">
+          <a href="1.html" class="text-body text-[14px] hover:text-dark transition-colors">&larr; 前の事例</a>
+          <a href="3.html" class="text-body text-[14px] hover:text-dark transition-colors">次の事例 &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-bg" role="contentinfo">
+    <div class="max-w-[1100px] mx-auto px-4">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 py-14">
+        <div>
+          <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-12 w-auto mb-5">
+          <p class="text-body/40 text-[13px] leading-relaxed">
+            日本の自治体・地方の課題解決を支援します。
+          </p>
+        </div>
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8" aria-label="フッターナビゲーション">
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">About</p>
+            <ul class="space-y-3">
+              <li><a href="../index.html#about" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">私たちについて</a></li>
+              <li><a href="../index.html#movie" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">取り組みの様子</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Works</p>
+            <ul class="space-y-3">
+              <li><a href="../works/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入事例</a></li>
+              <li><a href="../index.html#process" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入の流れ</a></li>
+              <li><a href="../news/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お知らせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Contact</p>
+            <ul class="space-y-3">
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お問い合わせ</a></li>
+              <li><a href="../download.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">資料ダウンロード</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="border-t border-dark/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-dark/20 text-[11px]">Copyright &copy; Google × Matsuo-Iwasawa Lab. All Rights Reserved.</p>
+        <a href="#" class="text-dark/20 text-[11px] hover:text-dark/40 transition-colors">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn?.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
+      menuBtn.setAttribute('aria-expanded', !open);
+    });
+  </script>
+</body>
+</html>

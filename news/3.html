@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>広島県での実証実験がスタートしました | Google × 松尾・岩澤研究室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { dark: '#313131', body: '#444444', bg: '#f5f5f5', btn: '#32373c' },
+          fontFamily: { sans: ['Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-sans text-dark bg-white pt-20">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 transition-all duration-300" aria-label="メインナビゲーション">
+    <div class="px-4 sm:px-6 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center shrink-0">
+        <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-11 sm:h-12 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-7 mr-4 sm:mr-8">
+        <a href="../index.html#about" class="text-body hover:text-dark text-[13px] transition-colors">私たちについて</a>
+        <a href="../index.html#works" class="text-body hover:text-dark text-[13px] transition-colors">導入事例</a>
+        <a href="../index.html#process" class="text-body hover:text-dark text-[13px] transition-colors">導入の流れ</a>
+        <a href="../index.html#news" class="text-body hover:text-dark text-[13px] transition-colors">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">お問い合わせ</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 cursor-pointer" aria-label="メニューを開く" aria-expanded="false">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-gray-100">
+      <div class="max-w-[1100px] mx-auto px-6 py-6 flex flex-col gap-1">
+        <a href="../index.html#about" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">私たちについて</a>
+        <a href="../index.html#works" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入事例</a>
+        <a href="../index.html#process" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入の流れ</a>
+        <a href="../index.html#news" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">お知らせ</a>
+        <a href="#" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-4 mobile-link cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-2 mobile-link cursor-pointer">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-[860px] mx-auto px-4 py-16 sm:py-20">
+    <nav class="text-[13px] text-body/50 mb-8" aria-label="パンくずリスト">
+      <a href="../index.html" class="hover:text-dark transition-colors">トップ</a>
+      <span class="mx-2">/</span>
+      <a href="index.html" class="hover:text-dark transition-colors">お知らせ</a>
+      <span class="mx-2">/</span>
+      <span class="text-dark">広島県での実証実験がスタートしました</span>
+    </nav>
+
+    <time class="text-body/40 text-[13px] block mb-4" datetime="2025-01-01">20XX.XX.XX</time>
+    <h1 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-12">広島県での実証実験がスタートしました（仮）</h1>
+
+    <div class="text-body text-[15px] leading-[2] space-y-6">
+      <p>
+        Google × 松尾・岩澤研究室は、広島県と連携した生成AI活用の実証実験を開始いたしました。広島県が抱える地域課題に対し、AIソリューションの有効性を検証します。
+      </p>
+
+      <h2 class="text-lg font-bold text-dark !mt-10">実証実験の概要</h2>
+      <p>
+        広島県では、中山間地域における高齢化と人口減少が深刻化しており、行政サービスの維持が大きな課題となっています。本実証実験では、以下の2つのテーマに取り組みます。
+      </p>
+
+      <h3 class="text-[15px] font-bold text-dark !mt-8">テーマ1：移動支援の最適化</h3>
+      <p>
+        中山間地域ではバス路線の廃止や減便が相次ぎ、高齢者の移動手段の確保が喫緊の課題です。AIを活用して住民の移動需要を予測し、デマンド型交通の配車ルートをリアルタイムに最適化するシステムの検証を行います。
+      </p>
+
+      <h3 class="text-[15px] font-bold text-dark !mt-8">テーマ2：農業支援AIアドバイザー</h3>
+      <p>
+        高齢化が進む農業従事者の負担軽減と、新規就農者への技術継承を支援するため、生成AIを活用した農業アドバイザーの実証を行います。気象データ・土壌データ・過去の収穫実績をもとに、最適な作付計画や病害虫対策をAIが提案します。
+      </p>
+
+      <h2 class="text-lg font-bold text-dark !mt-10">実証期間・対象地域</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>期間：20XX年XX月〜20XX年XX月（約6ヶ月間）</li>
+        <li>対象地域：広島県北部の中山間地域 3市町（仮）</li>
+        <li>参加者：地域住民約500名、農業従事者約100名（仮）</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-dark !mt-10">期待される効果</h2>
+      <p>
+        本実証実験を通じて得られた知見は、広島県全域はもとより、同様の課題を抱える全国の中山間地域にも展開可能なモデルケースとすることを目指しています。
+      </p>
+
+      <p class="text-body/40 text-[12px] !mt-10">※ 本記事の内容は仮のものです。</p>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-bg" role="contentinfo">
+    <div class="max-w-[1100px] mx-auto px-4">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 py-14">
+        <div>
+          <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-12 w-auto mb-5">
+          <p class="text-body/40 text-[13px] leading-relaxed">
+            日本の自治体・地方の課題解決を支援します。
+          </p>
+        </div>
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8" aria-label="フッターナビゲーション">
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">About</p>
+            <ul class="space-y-3">
+              <li><a href="../index.html#about" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">私たちについて</a></li>
+              <li><a href="../index.html#movie" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">取り組みの様子</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Works</p>
+            <ul class="space-y-3">
+              <li><a href="../works/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入事例</a></li>
+              <li><a href="../index.html#process" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入の流れ</a></li>
+              <li><a href="../news/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お知らせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Contact</p>
+            <ul class="space-y-3">
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お問い合わせ</a></li>
+              <li><a href="../download.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">資料ダウンロード</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="border-t border-dark/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-dark/20 text-[11px]">Copyright &copy; Google × Matsuo-Iwasawa Lab. All Rights Reserved.</p>
+        <a href="#" class="text-dark/20 text-[11px] hover:text-dark/40 transition-colors">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
+      menuBtn.setAttribute('aria-expanded', !open);
+    });
+  </script>
+</body>
+</html>

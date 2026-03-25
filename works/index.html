@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>導入事例一覧 | Google × 松尾・岩澤研究室</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { dark: '#313131', body: '#444444', bg: '#f5f5f5', btn: '#32373c' },
+          fontFamily: { sans: ['Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'sans-serif'] },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { color: #313131; font-feature-settings: "palt"; }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #313131;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="font-sans text-dark bg-white pt-20">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200" aria-label="メインナビゲーション">
+    <div class="px-4 h-20 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center shrink-0">
+        <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-11 sm:h-12 w-auto">
+      </a>
+      <div class="hidden lg:flex items-center gap-7 mr-4 sm:mr-8">
+        <a href="../index.html#about" class="text-body hover:text-dark text-[13px] transition-colors">私たちについて</a>
+        <a href="../index.html#works" class="text-body hover:text-dark text-[13px] transition-colors">導入事例</a>
+        <a href="../index.html#process" class="text-body hover:text-dark text-[13px] transition-colors">導入の流れ</a>
+        <a href="../index.html#news" class="text-body hover:text-dark text-[13px] transition-colors">お知らせ</a>
+        <a href="../download.html" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-[13px] rounded-full px-6 py-2.5 hover:opacity-80 transition-opacity cursor-pointer">お問い合わせ</a>
+      </div>
+      <button id="menuBtn" class="lg:hidden p-2 cursor-pointer" aria-label="メニューを開く" aria-expanded="false">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="lg:hidden hidden bg-white border-t border-gray-100">
+      <div class="max-w-[1100px] mx-auto px-4 py-6 flex flex-col gap-1">
+        <a href="../index.html#about" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">私たちについて</a>
+        <a href="../index.html#works" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入事例</a>
+        <a href="../index.html#process" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">導入の流れ</a>
+        <a href="../index.html#news" class="text-body text-sm py-3 border-b border-gray-50 mobile-link">お知らせ</a>
+        <a href="../download.html" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-4 mobile-link cursor-pointer">資料ダウンロード</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="bg-btn text-white text-sm rounded-full px-6 py-3 text-center mt-2 mobile-link cursor-pointer">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="max-w-[1100px] mx-auto px-4 pt-8 pb-4">
+      <nav class="text-[13px] text-body/50" aria-label="パンくずリスト">
+        <a href="../index.html" class="hover:text-dark transition-colors">トップ</a>
+        <span class="mx-2">/</span>
+        <span class="text-dark">導入事例</span>
+      </nav>
+    </div>
+
+    <!-- Page heading -->
+    <section class="max-w-[1100px] mx-auto px-4 pb-16">
+      <p class="text-[11px] tracking-[0.2em] uppercase text-body/60 mb-6">Works</p>
+      <h1 class="text-2xl sm:text-3xl font-bold leading-relaxed mb-4">導入事例</h1>
+      <p class="text-body text-[15px] leading-[2] mb-12">
+        Google × 松尾・岩澤研究室が各自治体と連携して取り組んだAI活用事例をご紹介します。
+      </p>
+
+      <!-- Case list -->
+      <div class="space-y-0">
+
+        <!-- Case 1 -->
+        <a href="1.html" class="group block py-10 border-t border-gray-200">
+          <article class="grid md:grid-cols-[1fr_1.8fr] gap-8 md:gap-10">
+            <div class="aspect-[4/3] overflow-hidden rounded">
+              <img src="../assets/images/works-01.jpg" alt="AI防災予測・避難シミュレーション" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-3">Case 01 — A県B市（仮）</p>
+              <h2 class="text-lg font-bold mb-3 group-hover:opacity-60 transition-opacity">AI防災予測・避難シミュレーション</h2>
+              <p class="text-body text-[14px] leading-[1.9] mb-4">
+                災害時の避難指示の遅延と情報伝達の不備が課題であったA県B市において、AIによる災害予測モデルと避難シミュレーションを構築。リアルタイムの気象データと地理情報を組み合わせ、避難指示の発令を迅速化。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">防災・危機管理</span>
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">生成AI</span>
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">GIS</span>
+              </div>
+              <p class="text-dark text-sm font-medium">避難指示の発令時間 40%短縮（仮数値）</p>
+            </div>
+          </article>
+        </a>
+
+        <!-- Case 2 -->
+        <a href="2.html" class="group block py-10 border-t border-gray-200">
+          <article class="grid md:grid-cols-[1fr_1.8fr] gap-8 md:gap-10">
+            <div class="aspect-[4/3] overflow-hidden rounded">
+              <img src="../assets/images/works-02.jpg" alt="行政窓口AIアシスタント" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-3">Case 02 — C県D市（仮）</p>
+              <h2 class="text-lg font-bold mb-3 group-hover:opacity-60 transition-opacity">行政窓口AIアシスタントの導入</h2>
+              <p class="text-body text-[14px] leading-[1.9] mb-4">
+                窓口業務の混雑と住民の待ち時間が慢性的な課題であったC県D市において、AIチャットボットと自動振り分けシステムを導入。住民からのよくある問い合わせを自動対応し、職員は複雑な相談業務に集中できる環境を構築。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">住民サービス</span>
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">LLM</span>
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">RAG</span>
+              </div>
+              <p class="text-dark text-sm font-medium">窓口対応時間 60%削減（仮数値）</p>
+            </div>
+          </article>
+        </a>
+
+        <!-- Case 3 -->
+        <a href="3.html" class="group block py-10 border-t border-b border-gray-200">
+          <article class="grid md:grid-cols-[1fr_1.8fr] gap-8 md:gap-10">
+            <div class="aspect-[4/3] overflow-hidden rounded">
+              <img src="../assets/images/works-03.jpg" alt="AIパーソナライズド観光提案" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex flex-col justify-center">
+              <p class="text-[11px] tracking-[0.2em] uppercase text-body/40 mb-3">Case 03 — E県F町（仮）</p>
+              <h2 class="text-lg font-bold mb-3 group-hover:opacity-60 transition-opacity">AIパーソナライズド観光提案</h2>
+              <p class="text-body text-[14px] leading-[1.9] mb-4">
+                観光客数の減少と地域資源の活用不足に直面していたE県F町において、AIが訪問者の嗜好・行動データを分析し、一人ひとりに最適化された観光ルートを提案するシステムを開発。
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">観光振興</span>
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">レコメンド</span>
+                <span class="text-[12px] text-body/60 border border-gray-200 rounded-full px-3 py-1">位置情報分析</span>
+              </div>
+              <p class="text-dark text-sm font-medium">観光客数 25%増加（仮数値）</p>
+            </div>
+          </article>
+        </a>
+
+      </div>
+
+      <p class="text-body/40 text-[12px] mt-8">※ 事例内容・数値は仮のものです。具体の事例文言は松尾研と連携して作成します。</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-dark">
+      <div class="max-w-[1100px] mx-auto px-4 text-center">
+        <h2 class="text-xl sm:text-2xl font-bold text-white mb-4">AI活用にご関心のある自治体の方へ</h2>
+        <p class="text-white/60 text-[15px] leading-[2] mb-8">
+          ヒアリングから課題整理まで無料でサポートします。お気軽にご相談ください。
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="inline-block bg-white text-dark text-[14px] font-medium rounded-full px-8 py-3 hover:opacity-80 transition-opacity cursor-pointer">
+            お問い合わせ
+          </a>
+          <a href="../download.html" class="inline-block bg-white text-dark text-[14px] font-medium rounded-full px-8 py-3 hover:opacity-80 transition-opacity cursor-pointer">
+            資料ダウンロード
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-bg" role="contentinfo">
+    <div class="max-w-[1100px] mx-auto px-4">
+      <div class="grid md:grid-cols-[1fr_2fr] gap-10 md:gap-16 py-14">
+        <div>
+          <img src="../assets/images/logo.png" alt="Google × 松尾・岩澤研究室" class="h-12 w-auto mb-5">
+          <p class="text-body/40 text-[13px] leading-relaxed">
+            日本の自治体・地方の課題解決を支援します。
+          </p>
+        </div>
+        <nav class="grid grid-cols-2 sm:grid-cols-3 gap-8" aria-label="フッターナビゲーション">
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">About</p>
+            <ul class="space-y-3">
+              <li><a href="../index.html#about" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">私たちについて</a></li>
+              <li><a href="../index.html#movie" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">取り組みの様子</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Works</p>
+            <ul class="space-y-3">
+              <li><a href="../works/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入事例</a></li>
+              <li><a href="../index.html#process" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">導入の流れ</a></li>
+              <li><a href="../news/index.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お知らせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-dark/30 text-[11px] uppercase tracking-wider mb-4">Contact</p>
+            <ul class="space-y-3">
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeFNLG19SAzBB-yTXnWFrc1EGM0cbMvY87kzRMIYudcfkkX3A/viewform" target="_blank" rel="noopener" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">お問い合わせ</a></li>
+              <li><a href="../download.html" class="text-dark/50 text-[13px] hover:text-dark/80 transition-colors">資料ダウンロード</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="border-t border-dark/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <p class="text-dark/20 text-[11px]">Copyright &copy; Google × Matsuo-Iwasawa Lab. All Rights Reserved.</p>
+        <a href="#" class="text-dark/20 text-[11px] hover:text-dark/40 transition-colors">プライバシーポリシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    menuBtn?.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', open ? 'M4 6h16M4 12h16M4 18h16' : 'M6 18L18 6M6 6l12 12');
+      menuBtn.setAttribute('aria-expanded', !open);
+    });
+  </script>
+</body>
+</html>
